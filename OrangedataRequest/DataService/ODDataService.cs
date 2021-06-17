@@ -96,6 +96,7 @@ namespace OrangedataRequest.DataService
             using (response)
             {
                 res.StatusCode = response.StatusCode;
+                res.RetryAfter = response.Headers.RetryAfter.Delta;
                 var text = await response.Content.ReadAsStringAsync();
                 res.Response = text;
                 try

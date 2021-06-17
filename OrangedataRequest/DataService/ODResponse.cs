@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 
 namespace OrangedataRequest.DataService
 {
@@ -11,6 +12,11 @@ namespace OrangedataRequest.DataService
         ///     Код статуса HTTP
         /// </summary>
         public HttpStatusCode StatusCode { get; set; }
+        
+        /// <summary>
+        ///     Рекомендуемое время ожидания, если сервис недоступен
+        /// </summary>
+        public TimeSpan? RetryAfter { get; set; }
 
         /// <summary>
         ///     Десериализованный ответ
